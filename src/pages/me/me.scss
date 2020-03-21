@@ -1,0 +1,128 @@
+.info {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  line-height: normal;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  &::after {
+    border: none;
+  }
+  &:hover,
+  &:active {
+    background-color: #f8f8f8;
+  }
+  .avtater {
+    image {
+      width: 120px;
+      height: 120px;
+      border-radius: 120px;
+    }
+  }
+  .content {
+    flex-grow: 1;
+    margin-left: 20px;
+    .nick {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .des {
+      font-size: 28px;
+      margin-top: 8px;
+      .label {
+        color: #b2b2b2;
+        margin-right: 12px;
+      }
+      .value {
+        color: #000;
+        margin-right: 30px;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #888888;
+    .login-txt {
+      color: #6190e8;
+    }
+  }
+}
+.tool {
+  margin: 30px;
+  background: #fff;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  .item {
+    flex-grow: 1;
+    text-align: center;
+    .value {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      &.rank {
+        font-weight: normal;
+        font-size: 28px;
+        color: #e6a23c;
+      }
+    }
+    .label {
+      font-size: 24px;
+      color: #b2b2b2;
+    }
+  }
+}
+swiper {
+  margin: 20px 0px;
+  background: #ffffff;
+  height: 290px;
+}
+.cells {
+  margin-top: 40px;
+  padding: 20px 0px;
+  background: #ffffff;
+  button {
+    text-align: left;
+    &::after {
+      border: none;
+    }
+  }
+  .cell {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px 40px;
+    &.cell-hover {
+      background: #f8f8f8;
+    }
+    .left {
+      flex-grow: 1;
+      .title {
+        font-size: 36px;
+        line-height: 36px;
+      }
+      .des {
+        font-size: 24px;
+        color: #b2b2b2;
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      color: #b2b2b2;
+      .value {
+        font-size: 28px;
+      }
+      .auth{
+        font-size: 26px;
+        color: red;
+      }
+    }
+  }
+}

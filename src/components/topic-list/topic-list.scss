@@ -1,0 +1,46 @@
+.list {
+  background-color: white;
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px;
+    &:hover,
+    &:active {
+      background: #fafafa;
+    }
+    image {
+      width: 96px;
+      height: 96px;
+      border-radius: 10px;
+    }
+    .item-content {
+      flex-grow: 1;
+      text-align: left;
+      margin-left: 16px;
+      .item-title {
+        font-size: 30px;
+      }
+      .item-des {
+        font-size: 26px;
+        margin-top: 12px;
+        color: #b2b2b2;
+        max-width: 410px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /*设置文本行数限制*/
+        -webkit-box-orient: vertical; /*设置文本排列方式*/
+      }
+    }
+    .item-follow {
+      font-size: 26px;
+      color: #b2b2b2;
+    }
+  }
+}
+.des {
+  color: #989898;
+  font-size: 26px;
+  text-align: center;
+  margin: 30px 0;
+}

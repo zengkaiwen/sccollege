@@ -1,0 +1,36 @@
+.tab-bar {
+  border-top-left-radius: 10PX;
+  border-top-right-radius: 10PX;
+  text-align: center;
+  position: relative;
+  background: #fff;
+  .tabs {
+    display: inline-block;
+    position: relative;
+    .tab-bar {
+      position: absolute;
+      width: 10PX;
+      height: 3PX;
+      background: #13100e;
+      border-radius: 15PX;
+      transition: all 0.3s;
+      bottom: 1PX;
+    }
+  }
+  .tab {
+    display: inline-block;
+    font-size: 15PX;
+    width: 60PX;
+    padding: 5PX 0;
+    box-sizing: border-box;
+    line-height: 24PX;
+    color: #9b9b9b;
+    text-align: center;
+    transition: all 0.3s;
+    &.active {
+      font-size: 17PX;
+      color: #000000;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.guide-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  text-align: center;
+  padding: 50px 0px;
+  .button {
+    height: 94px;
+    color: white;
+    line-height: 94px;
+    border-radius: 94px;
+    padding: 0px 120px;
+    display: inline-block;
+    background: #6190e8;
+    border: none;
+    box-shadow: 0 2PX 6PX rgba(120, 164, 250, 0.35);
+    font-size: 34px;
+    font-weight: bold;
+    &::after {
+      border: none;
+    }
+    &:hover,
+    &:active {
+      background-color: #78a4fa;
+    }
+  }
+  .des {
+    padding: 16px 0px;
+    color: #888888;
+    font-size: 24px;
+    font-weight: lighter;
+  }
+}

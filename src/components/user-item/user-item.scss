@@ -1,0 +1,46 @@
+.user {
+  display: flex;
+  .avtater {
+    flex-shrink: 0;
+    image {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+    }
+  }
+  .info {
+    flex-grow: 1;
+    margin-left: 20px;
+    .info-content {
+      display: flex;
+      align-items: center;
+      .nick {
+        font-size: 26px;
+        color: #606266;
+        max-width: 260px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /*设置文本行数限制*/
+        -webkit-box-orient: vertical; /*设置文本排列方式*/
+        &.vip {
+          color: #d81e06;
+        }
+      }
+      .ic-img {
+        width: 28px;
+        height: 28px;
+        margin-left: 8px;
+      }
+    }
+    .info-des {
+      margin-top: 6px;
+      color: #b2b2b2;
+      font-size: 22px;
+      text-align: left;
+    }
+  }
+  .left{
+    align-self: center;
+  }
+}

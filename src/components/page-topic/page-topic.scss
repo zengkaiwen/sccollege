@@ -1,0 +1,190 @@
+.tracks {
+  background: #ffffff;
+  margin-bottom: 16px;
+  .top {
+    display: flex;
+    align-items: center;
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      flex-grow: 1;
+      text-align: left;
+      padding-left: 30px;
+    }
+    .btn {
+      padding: 30px;
+      color: #b2b2b2;
+    }
+  }
+  .list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-bottom: 30px;
+    .item {
+      margin-left: 30px;
+      padding: 5px;
+      flex-shrink: 0;
+      &::after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        border-bottom: 0.4px solid rgba(235, 237, 245, 0.8);
+        color: rgba(235, 237, 245, 0.8);
+      }
+      image {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+      }
+      .item-title {
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        max-width: 140px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /*设置文本行数限制*/
+        -webkit-box-orient: vertical; /*设置文本排列方式*/
+      }
+      &.item-more {
+        .ic {
+          width: 120px;
+          height: 120px;
+          background: #f1f1f1;
+          border-radius: 10px;
+          text-align: center;
+          line-height: 120px;
+          margin-bottom: 10px;
+          margin-right: 35px;
+        }
+        .item-title {
+          margin-right: 35px;
+        }
+        color: #409eff;
+      }
+    }
+  }
+}
+.empty {
+  padding: 20px;
+  background: rgba(120, 164, 250, 0.1);
+  .empty-content {
+    background: url(../../images/empty_xct9.svg) no-repeat;
+    background-size: 30% 100%;
+    background-position: 100% 100%;
+    font-size: 28px;
+    padding: 30px;
+    text-align: left;
+    color: #7a8299;
+    line-height: 45px;
+  }
+}
+.recommends {
+  background: #ffffff;
+  .title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0px;
+    .left {
+      padding: 30px;
+      font-size: 32px;
+      font-weight: bold;
+      flex-grow: 1;
+      text-align: left;
+    }
+    .right {
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      font-size: 28px;
+      color: #409eff;
+      .icon {
+        font-size: 32px;
+        font-weight: bold;
+      }
+    }
+  }
+  .list {
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 40px 30px;
+      &.item-hover {
+        background: #fafafa;
+      }
+      image {
+        width: 96px;
+        height: 96px;
+        border-radius: 10px;
+      }
+      .item-content {
+        flex-grow: 1;
+        text-align: left;
+        margin-left: 16px;
+        .item-title {
+          font-size: 30px;
+        }
+        .item-des {
+          font-size: 26px;
+          margin-top: 12px;
+          color: #b2b2b2;
+          max-width: 410px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1; /*设置文本行数限制*/
+          -webkit-box-orient: vertical; /*设置文本排列方式*/
+        }
+      }
+      .item-action {
+        .btn {
+          font-size: 28px;
+          background: #6190e8;
+          color: white;
+          padding: 14px 20px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          line-height: normal;
+          &::after {
+            border: none;
+          }
+          &.has {
+            background: #f8f8f8;
+            color: #b2b2b2;
+            font-size: 26px;
+          }
+        }
+        .icon {
+          font-size: 32px;
+          margin-right: 6px;
+          font-weight: bold;
+        }
+        .num {
+          font-size: 28px;
+          color: #409eff;
+        }
+      }
+    }
+  }
+  .footer {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    color: #409eff;
+    padding: 50px 0px;
+    text-align: center;
+    font-size: 28px;
+    .icon {
+      font-size: 34px;
+      margin-right: 6px;
+      font-weight: bold;
+    }
+  }
+}

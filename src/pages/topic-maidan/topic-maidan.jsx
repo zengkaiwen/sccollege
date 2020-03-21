@@ -1,0 +1,31 @@
+import Taro, { Component } from '@tarojs/taro';
+import { View } from '@tarojs/components';
+
+import TopicList from '../../components/topic-list/topic-list';
+import Footer from '../../components/guide-footer/guide-footer';
+
+export default class TopicMaidan extends Component {
+
+  config = {
+    navigationBarTitleText: '话题广场'
+  }
+
+  onTopicItemClick = () => {
+
+  }
+
+  onCreateBtnClick = () => {
+    Taro.navigateTo({
+      url: '../topic-create/topic-create'
+    });
+  }
+
+  render() {
+    return (
+      <View>
+        <TopicList onTopicItemClick={this.onTopicItemClick} des='没有感兴趣的话题？那就新建一个吧' />
+        <Footer btntext='创建话题' onBtnTap={this.onCreateBtnClick} />
+      </View>
+    );
+  }
+}

@@ -1,0 +1,36 @@
+page {
+  background-color: white;
+}
+.form-item {
+  background-color: white;
+  padding: 30px;
+  .label {
+    font-size: 32px;
+    color: #595959;
+    line-height: 50px;
+  }
+  .des {
+    font-size: 26px;
+    color: #989898;
+    line-height: 40px;
+  }
+  .img {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #f2f2f2;
+    .des {
+      font-size: 24px;
+      color: #ccc;
+    }
+  }
+  .form-control {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 32px;
+  }
+}
