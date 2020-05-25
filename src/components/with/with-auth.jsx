@@ -12,7 +12,7 @@ class WithAuth extends Taro.Component {
     if (user.is_auth !== 2) {
       Taro.showToast({
         icon: 'none',
-        title: '请先学生认证'
+        title: '请先认证学生身份'
       });
       return;
     }

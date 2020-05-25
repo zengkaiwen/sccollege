@@ -25,7 +25,7 @@ export default class TopicService extends BaseService {
     async getTopicList(page = 0) {
         const res = await this.request('/public/topicList', {page});
         if (res.code === 1) {
-            return res.data.map(this.parseTopic.bind(this));
+            return res.data;
         }
         return null;
     }
@@ -43,7 +43,6 @@ export default class TopicService extends BaseService {
     async getTopic(id) {
         const res = await this.request('/public/topicDetail', {id});
         if (res.code === 1) {
-            res.data = this.parseTopic(res.data)
             return res.data;
         }
         return null;
@@ -62,44 +61,11 @@ export default class TopicService extends BaseService {
     async myFollowTopics(page) {
         const res = await this.request('/topic/follow', {page});
         if (res.code === 1) {
-            return res.data.map(this.parseTopic.bind(this));
+            return res.data.map((item) => item.topic);
         }
         return null;
     }
 
-
-    async topicRank(topicId, pageIndex, pageSize) {
-        const res = await this.request(`/topic/user/rank/${topicId}/${pageIndex}/${pageSize}`)
-        return res.data
-    }
-    async removePost(topicId, postId) {
-        const res = await this.request(`/post/topic/remove/${topicId}/${postId}`)
-        if (res.code === 0) {
-            this.showToast('移除成功', 'success')
-            return true
-        } else {
-            if (res.erroCode > 0) {
-                this.showToast(res.msg)
-            } else {
-                this.showToast()
-            }
-        }
-        return false
-    }
-    async recommendPost(topicId, postId, isRecommend) {
-        const res = await this.request(`/post/topic/recommend/${topicId}/${postId}/${isRecommend ? 1 : 0}`)
-        if (res.code === 0) {
-            this.showToast('设置成功', 'success')
-            return true
-        } else {
-            if (res.erroCode > 0) {
-                this.showToast(res.msg)
-            } else {
-                this.showToast()
-            }
-        }
-        return false
-    }
     topicAddTrack(topic) {
         try {
             let items = Taro.getStorageSync(KEY_TOPIC_TRACK)

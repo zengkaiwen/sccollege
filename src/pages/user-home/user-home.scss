@@ -1,3 +1,60 @@
 .page {
   background: transparent;
 }
+.user-box {
+  position: relative;
+  padding: 100px 30PX;
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    background: rgba(255, 255, 255, .3);
+    overflow: hidden;
+    z-index: -1;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shadow {
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, .35);
+  }
+  .center {
+    display: flex;
+    margin-top: 30px;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: white;
+    .nickname {
+      font-size: 46px;
+    }
+    .school {
+      font-size: 32px;
+      margin-left: 40px;
+      position: relative;
+      &::before {
+        content:  '·';
+        position: absolute;
+        left: -25px;
+        font-size: 36px;
+        font-weight: bold;
+      }
+    }
+  }
+  .bottom {
+    .tip {
+      display: inline-block;
+      margin-right: 30px;
+      font-size: 32px;
+      color: white;
+      .txt {
+        font-size: 26px;
+        padding-left: 6px;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ import {
   AtActionSheetItem
 } from 'taro-ui';
 
-import { User, Province } from '../../common/api';
+import { User, Province } from '../../../common/api';
 import {
   changeAvatar,
   changeNickname,
@@ -21,7 +21,7 @@ import {
   changePathetState,
   changeBirthday,
   changeHometown
-} from '../../actions/user';
+} from '../../../actions/user';
 
 import './user-edit.scss';
 
@@ -205,7 +205,7 @@ class UserEdit extends Component {
 
   goAuth = () => {
     Taro.navigateTo({
-      url: '../user-school/user-school'
+      url: '/pages/user-school/user-school'
     });
   }
 
@@ -284,7 +284,7 @@ class UserEdit extends Component {
           <View className='cell'>
             <View className='left'>学历</View>
             <View className='right'>
-              <View>{user.degree || '未设置'}</View>
+              <View>{['未知','专科','本科','硕士', '博士'][user.degree] || '未设置'}</View>
             </View>
           </View>
           <View className='cell'>

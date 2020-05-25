@@ -1,0 +1,98 @@
+@import '../../font.css';
+.wrap {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -4px 6px #eeeeee;
+  .editor {
+    // 轮播
+    .imgs-box {
+      background-color: #f2f2f2;
+      padding: 5PX;
+      height: 70PX;
+      box-sizing: border-box;
+      white-space: nowrap;
+      .img-box {
+        position: relative;
+        display: inline-block;
+        margin-right: 5PX;
+        .img {
+          width: 60Px;
+          height: 60Px;
+        }
+        .del {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #ff4949;
+          height: 16Px;
+          width: 16Px;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    .textarea {
+      width: 100%;
+      font-size: 30px;
+      line-height: 40px;
+      height: 86px;
+      color: #686868;
+      padding: 20px 30px;
+    }
+    .option {
+      color: #595959;
+      height: 80px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      .btn-group {
+        display: flex;
+        .btn {
+          margin-left: 20px;
+        }
+      }
+      .left {
+        display: flex;
+        flex-flow: row nowrap;
+        .img-btn {
+          margin-right: 20px;
+        }
+        .aite {
+          color: #6190e8;
+        }
+      }
+    }
+  }
+  .bar {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    .content-bar {
+      flex: 1;
+      max-width: 50%;
+      background-color: #f2f2f2;
+      border-radius: 30px;
+      padding: 0 30px;
+      line-height: 60px;
+      color: #989898;
+      font-size: 30px;
+    }
+    .icon {
+      font-size: 48px;
+      margin: 0 20px;
+      .sup {
+        display: inline-block;
+        font-size: 28px;
+        vertical-align: text-top;
+        margin-left: 10px;
+      }
+    }
+  }
+}

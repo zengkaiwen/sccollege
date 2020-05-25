@@ -1,0 +1,79 @@
+@import '../../font.css';
+.icon {
+  font-size: 32rpx;
+  color: #989898;
+  padding: 0 10px;
+  &.icon-more {
+    font-size: 50px;
+  }
+  &.active {
+    color: #321123;
+  }
+}
+.card {
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 30px 20px;
+  border-top: 1px solid #eeeeee;
+  color: #595959;
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .link {
+      color: #595959;
+      font-size: 28px;
+    }
+    .user-info {
+      flex: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      height: 80px;
+      margin: 0 20px;
+      .nickname-wrap {
+        font-size: 30px;
+      }
+      .school {
+        color: #717171;
+        font-size: 26px;
+      }
+    }
+  }
+  .center {
+    padding: 30px 0;
+    .content {
+      font-size: 30px;
+      color: #797979;
+    }
+    .imgs-box {
+      margin: 10px 0;
+      overflow: hidden;
+      .img {
+        float: left;
+        width: 230px;
+        height: 230px;
+        margin: 6px 0;
+        &:nth-child(3n-1) {
+          margin: 6px 10px;
+        }
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .date {
+      font-size: 24px;
+      color: #989898;
+      margin-right: 30px;
+    }
+    .option {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+  }
+}

@@ -140,7 +140,7 @@ class UserSchool extends Taro.Component {
       return;
     }
     Taro.navigateTo({
-      url: '../user-verify/user-verify'
+      url: '/pages/user-verify/user-verify'
     })
   }
 

@@ -51,8 +51,13 @@ class UserVerify extends Component {
       return;
     }
     Taro.showLoading();
-    await User.applyAuth(user_name, auth_image);
+    const res = await User.applyAuth(user_name, auth_image);
     Taro.hideLoading();
+    if (res) {
+      Taro.switchTab({
+        url: '/pages/me/me'
+      })
+    }
   }
 
   goMe = () => {
@@ -80,7 +85,7 @@ class UserVerify extends Component {
           <View className='img_box' onClick={this.handleImgBoxClick}>
             {
               auth_image ? (
-                <Image className='img' src={auth_image} mode='aspectFit' />
+                <Image className='img' src={User.parseQiniuImg(auth_image)} mode='aspectFit' />
               ) : (
                 <View className='indicate'>
                   <AtIcon value='camera' size='30' color='#989898' />

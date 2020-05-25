@@ -5,11 +5,12 @@ import {
 
 import { AtIcon } from 'taro-ui';
 
-import { Topic } from '../../common/api';
+import { Topic, Follow } from '../../common/api';
 
 import MyPage from '../my-page/my-page';
 
 import './page-topic.scss';
+import '../../font.css'
 
 export default class PageTopic extends Component {
 
@@ -32,6 +33,7 @@ export default class PageTopic extends Component {
     this.setState({
       pageState: 0
     });
+
     let res = await Topic.myFollowTopics(1); // 获取我关注的topic
     if (res) {
       if (res.length > 0) {
@@ -60,6 +62,15 @@ export default class PageTopic extends Component {
     }
   }
 
+  componentDidShow() {
+    const tracks = Topic.getTopicTrack();
+    if (tracks) {
+      this.setState({
+        tracks,
+      })
+    }
+  }
+
   onScroll = (detail) => {
     console.log(detail);
   }
@@ -76,7 +87,7 @@ export default class PageTopic extends Component {
   }
 
   /**
-   * 清楚最近访问的话题
+   * 清除最近访问的话题
    */
   onClean = () => {
 
@@ -87,7 +98,9 @@ export default class PageTopic extends Component {
    * @param {number} id 话题的id
    */
   goTopic(id) {
-    console.log(id);
+    Taro.navigateTo({
+      url: '/pages/subPackage/topic-home/topic-home?id='+id
+    });
   }
 
   /**
@@ -95,7 +108,7 @@ export default class PageTopic extends Component {
    */
   goMaidan = () => {
     Taro.navigateTo({
-      url: '../../pages/topic-maidan/topic-maidan',
+      url: '/pages/topic-maidan/topic-maidan',
     });
   }
 
@@ -103,9 +116,22 @@ export default class PageTopic extends Component {
     this.mypage = page;
   }
 
-  onFollow(e, item, index) {
-    e.stopPropagation();
-    console.log(item, index);
+  async onFollow(e, item, index) {
+    const { recommends } = this.state;
+    let newRecommends = [...recommends];
+    let res = false;
+    if (newRecommends[index].hasFollow) {
+      res = await Follow.cancelFollowTopic(item.id);
+      newRecommends[index].hasFollow = false;
+    } else {
+      res = await Follow.followTopic(item.id);
+      newRecommends[index].hasFollow = true;
+    }
+    if (res) {
+      this.setState({
+        recommends: newRecommends,
+      });
+    }
   }
 
   render() {
@@ -125,6 +151,7 @@ export default class PageTopic extends Component {
         onScrollToLower={this.onScrollToLower}
         onRefresh={this.onRefresh}
         onRef={this.onRef}
+        onRetry={this.init}
       >
         {
           tracks ? (
@@ -140,7 +167,7 @@ export default class PageTopic extends Component {
                   {
                     tracks.map((item) => (
                       <View className='item' key={item.id} onClick={() => this.goTopic(item.id)}>
-                        <Image src={item.iconPath} />
+                        <Image src={item.icon_path} />
                         <View className='item-title'>{item.title}</View>
                       </View>
                     ))
@@ -175,7 +202,7 @@ export default class PageTopic extends Component {
                       hover-className='item-hover'
                       onClick={() => this.goTopic(item.id)}
                     >
-                      <Image src={item.iconPath} />
+                      <Image src={item.icon_path} />
                       <View className='item-content'>
                         <View className='item-title'>{item.title}</View>
                         <View className='item-des'>{item.des}</View>
@@ -221,7 +248,7 @@ export default class PageTopic extends Component {
                           <View className='item-title'>{item.title}</View>
                           <View className='item-des'>{item.des}</View>
                         </View>
-                        <View className='item-action' onClick={(e) => this.onFollow(e, item, index)}>
+                        <View className='item-action' onClick={(e) => {e.stopPropagation();this.onFollow(e, item, index)}}>
                           <Button className={['btn', item.hasFollow ? 'has' : '']}>
                             <Text className={['icon', item.hasFollow ? 'icon-follow' : 'icon-add']}></Text>
                             <Text>{item.hasFollow ? '已关注' : '关注'}</Text>

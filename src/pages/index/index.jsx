@@ -10,8 +10,9 @@ import './index.scss'
 
 import Tabs from '../../components/tab-bar/tab-bar';
 import Topic from '../../components/page-topic/page-topic';
-import Recommend from '../../components/recommend/recommend';
-import Follow from '../../components/follow/follow';
+import Recommend from '../../components/page-recommend/page-recommend';
+import Activity from '../../components/page-activity/page-activity';
+import WithAuth from '../../components/with/with-auth';
 
 @connect(({ hometabs }) => ({
   hometabs
@@ -23,7 +24,7 @@ import Follow from '../../components/follow/follow';
 class Index extends Component {
 
   state = {
-    labels: ['话题', '推荐', '关注'],
+    labels: ['话题', '推荐'],
     action_right: 15,
   }
 
@@ -47,8 +48,10 @@ class Index extends Component {
     }
   }
 
-  goSend = (e) => {
-    e.default
+  goEdit = () => {
+    Taro.navigateTo({
+      url: '/pages/post-edit/post-edit'
+    });
   }
 
   render() {
@@ -75,14 +78,16 @@ class Index extends Component {
             <Recommend />
           </SwiperItem>
           <SwiperItem>
-            <Follow />
+            <Activity />
           </SwiperItem>
         </Swiper>
 
         <View className='home-action' style={{right: `${action_right}px`}}>
-          <View className='btn-circle btn-i' onClick={this.goSend}>
-            <View className='icon icon-xiezuo'></View>
-          </View>
+          <WithAuth onClick={this.goEdit}>
+            <View className='btn-circle btn-i'>
+              <View className='icon icon-xiezuo'></View>
+            </View>
+          </WithAuth>
           {/* <View className='btn-share btn-i' onClick='goMoney'>
             <View className='icon icon-hongbao'></View>
             <View className='dot'>认证领¥30</View>

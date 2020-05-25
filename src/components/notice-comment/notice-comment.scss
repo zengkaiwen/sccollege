@@ -1,0 +1,25 @@
+.card {
+  padding: 30px;
+  border-top: 2px solid #989898;
+  .header{
+    display: flex;
+    flex-flow: row nowrap;
+    .right {
+      margin-left: 20px;
+      flex: 1;
+      display: flex;
+      height: 80px;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      .date {
+        font-size: 28px;
+        color: #989898;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .content {
+    margin: 20px;
+    color: #989898;
+  }
+}

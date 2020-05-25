@@ -16,7 +16,7 @@ export default class TopicMaidan extends Component {
 
   onCreateBtnClick = () => {
     Taro.navigateTo({
-      url: '../topic-create/topic-create'
+      url: '/pages/topic-create/topic-create'
     });
   }
 

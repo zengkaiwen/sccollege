@@ -24,9 +24,7 @@ class Me extends Component {
   }
 
   init() {
-    this.setState({
-      hasBinding: Taro.getStorageSync('hasBinding')
-    });
+
   }
 
   config = {
@@ -36,22 +34,23 @@ class Me extends Component {
 
   // 跳到个人主页
   goHomePage = () => {
+    const { user: { id } } = this.props;
     Taro.navigateTo({
-      url: '../user-home/user-home'
+      url: '/pages/user-home/user-home?id='+id
     });
   }
 
   // 跳到编辑信息
   goEdit = () => {
     Taro.navigateTo({
-      url: '../user-edit/user-edit'
+      url: '/pages/subPackage/user-edit/user-edit'
     })
   }
 
   // 跳到学生认证页面
   goSchool = () => {
     Taro.navigateTo({
-      url: '../user-school/user-school'
+      url: '/pages/user-school/user-school'
     })
   }
 
@@ -69,9 +68,6 @@ class Me extends Component {
       let result = await User.bindInfo(encryptedData, iv, rawData, signature);
       if (result) {
         dispatch(getUser());
-        this.setState({
-          hasBinding: true,
-        });
       }
     } else {
       User.showToast('你已取消授权');

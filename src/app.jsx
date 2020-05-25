@@ -35,12 +35,13 @@ class App extends Component {
       'pages/notice/notice',
       'pages/me/me',
       'pages/login/login',
-      'pages/user-edit/user-edit',
       'pages/user-school/user-school',
       'pages/user-verify/user-verify',
       'pages/user-home/user-home',
       'pages/topic-maidan/topic-maidan',
-      'pages/topic-create/topic-create'
+      'pages/topic-create/topic-create',
+      'pages/post-edit/post-edit',
+      'pages/post/post'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -73,7 +74,18 @@ class App extends Component {
           selectedIconPath: 'images/ic_me_full.png'
         }
       ]
-    }
+    },
+    subPackages: [
+      {
+        root: 'pages/subPackage/',
+        pages: [
+          'comment/comment',
+          'topic-home/topic-home',
+          'notice-list/notice-list',
+          'user-edit/user-edit'
+        ]
+      }
+    ]
   }
 
   // componentDidShow () {}

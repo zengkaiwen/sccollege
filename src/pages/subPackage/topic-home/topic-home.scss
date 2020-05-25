@@ -1,0 +1,34 @@
+.topic-box {
+  position: relative;
+  padding: 100px 30PX;
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(20px);
+    background: rgba(255, 255, 255, .3);
+    overflow: hidden;
+    z-index: -1;
+  }
+  .topic {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: #321123;
+    .title {
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .des {
+      font-size: 26px;
+      font-weight: lighter;
+      color: #989898;
+    }
+    .follow {
+      margin: 20px 0;
+      font-size: 28px;
+    }
+  }
+}

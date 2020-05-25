@@ -3,12 +3,12 @@ import {
   View
 } from '@tarojs/components';
 
-import './recommend.scss';
+import './page-activity.scss';
 
-export default class Recommend extends Component {
+export default class PageActivity extends Component {
   render() {
     return (
-      <View>推荐</View>
+      <View>话题</View>
     );
   }
 }

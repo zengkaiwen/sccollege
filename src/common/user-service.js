@@ -52,10 +52,11 @@ export default class UserService extends BaseService {
     return null;
   }
 
-  async getDetail(userId) {
-    const res = await this.request(`/user/detail/${userId}`, null, 'GET');
-    if (res.code === 0) {
-      return res.data.user;
+  // 获取用户信息
+  async getInfo(userId) {
+    const res = await this.request(`/public/getUserInfo`, { id: userId }, 'GET');
+    if (res.code === 1) {
+      return res.data;
     }
     return null;
   }
@@ -217,7 +218,7 @@ export default class UserService extends BaseService {
   async uploadAuthImg() {
     const path = await this.uploadOneImg();
     if (path) {
-      return this.parseQiniuImg(path);
+      return path;
     }
     return null;
   }

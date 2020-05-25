@@ -1,0 +1,33 @@
+.comment-wrap {
+  background-color: white;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 30px;
+  .option {
+    display: flex;
+    font-size: 28px;
+    align-items: center;
+    .divi {
+      margin: 0 10px;
+      width: 1px;
+      height: 28px;
+      background-color: #7f7f7f;
+    }
+    .active {
+      color: #6190e8;
+    }
+    color: #7f7f7f;
+  }
+}
+.tip {
+  text-align: center;
+  font-size: 26px;
+  color: #989898;
+  margin: 30px 0;
+}
+.bottom {
+  height: 100px;
+}

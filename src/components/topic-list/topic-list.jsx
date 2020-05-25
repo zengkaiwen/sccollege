@@ -55,10 +55,10 @@ class TopicList extends Component {
     });
   }
 
-  itemClick = (id) => {
+  itemClick = (id, name) => {
     const { onTopicItemClick } = this.props;
     if ( typeof onTopicItemClick === 'function') {
-      onTopicItemClick(id);
+      onTopicItemClick(id, name);
     }
   }
 
@@ -66,7 +66,7 @@ class TopicList extends Component {
     const { searchVal, list, cacheList } = this.state;
     const { des } = this.props;
     return (
-      <View>
+      <View className='wrap'>
         {
           cacheList.length !== 0 && (
             <AtSearchBar
@@ -82,7 +82,7 @@ class TopicList extends Component {
               <View
                 className='item'
                 key={item.id}
-                onClick={() => this.itemClick(item.id)}
+                onClick={() => this.itemClick(item.id, item.title)}
               >
                 <Image className='img' src={item.icon_path} />
                 <View className='item-content'>

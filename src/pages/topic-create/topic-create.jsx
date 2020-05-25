@@ -87,6 +87,9 @@ class TopicCreate extends Component {
     return (
       <View>
         <View className='form-item'>
+          <View className='des'>新建话题提交之后，需要等官方审核通过后才能和大家见面哦</View>
+        </View>
+        <View className='form-item'>
           <View className='label'>话题图标：</View>
           <View onClick={this.changeIcon} style={{display: 'inline-block'}}>
             {

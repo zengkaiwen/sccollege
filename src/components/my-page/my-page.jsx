@@ -100,7 +100,7 @@ export default class MyPage extends Component {
       margin,
     } = this.state;
     const { onRefresh, enableRefresh } = this.props;
-    console.log(enableRefresh);
+    // console.log(enableRefresh);
     if (!isLoading && enableRefresh) {
       // console.log('进入刷新');
       const newState = this.state;
@@ -130,13 +130,18 @@ export default class MyPage extends Component {
   // 当滚动时
   onScroll = (e) => {
     const { onScroll: propsOnScroll } = this.props;
-    propsOnScroll(e.detail);
+    if (typeof propsOnScroll === 'function') {
+      propsOnScroll(e.detail);
+    }
   }
 
-  // 当滚动到顶部
+  // 当滚动到底部
   onScrolltolower = () => {
+    console.log('碰到底');
     const { onScrollToLower: propsOnScrollToLower } = this.props;
-    propsOnScrollToLower();
+    if (typeof propsOnScrollToLower === 'function') {
+      propsOnScrollToLower();
+    }
   }
 
   render() {
@@ -163,7 +168,7 @@ export default class MyPage extends Component {
       <View
         className='page'
         style={{
-          height: autoHeight ? 'auto' : `calc(${baseHeight} - ${offset}PX - ${bottomOffset}px)`,
+          height: autoHeight ? `${baseHeight}` : `calc(${baseHeight} - ${offset}PX - ${bottomOffset}px)`,
         }}
       >
         {
@@ -189,6 +194,9 @@ export default class MyPage extends Component {
                 onScroll={this.onScroll}
                 onScrollToLower={this.onScrolltolower}
                 className='content'
+                style={{
+                  height: '100%'
+                }}
               >
                 <View
                   className='loading_wrap'
@@ -208,7 +216,7 @@ export default class MyPage extends Component {
                 {/* 这里是加载更多 */}
                 {
                   showMoreLoading ?
-                  <AtActivityIndicator mode='center' />
+                  <Loading />
                   : null
                 }
               </ScrollView>

@@ -1,37 +1,17 @@
 import Taro from '@tarojs/taro';
-import weibo from './weibo-emotions';
 
 const baseUrl = 'http://college.test/api/sns';
-// export const baseUrl = 'http://127.0.0.1:7001'
-const qiniuUrl = 'http://q63jwsb2r.bkt.clouddn.com/'; // 测试域名
-const imgUrl = baseUrl + '/public/images';
+const qiniuUrl = 'http://sns-file.zeuswk.com/'; // 七牛云图片地址
+const imgUrl = baseUrl + '/public/images'; // 服务器图片地址
 
 const genders = ['未知', '男', '女'];
 
-let _height = 0;  // 窗口高度
+let _height = 0;  // 窗口高度 px
 let _statusBarHeight = 0; // 状态栏高度
 let _headHeight = 0;  // 顶部导航栏高度
-const weibo_icon_url = weibo.weibo_icon_url; // 微博表情地址
-const emotions = weibo.emotions; // 微博表情属性
+let _pixelRadio = 1;
+let _windowHeight = 0; // 窗口高度
 
-// 微博表情
-export const weibo_emojis = (function () {
-    const _emojis = {}
-    for (const key in emotions) {
-        if (emotions.hasOwnProperty(key)) {
-            const ele = emotions[key];
-            for (const item of ele) {
-                _emojis[item.value] = {
-                    id: item.id,
-                    value: item.value,
-                    icon: item.icon.replace('/', '_'),
-                    url: weibo_icon_url + item.icon
-                }
-            }
-        }
-    }
-    return _emojis
-})();
 
 // 基础service
 export default class BaseService {
@@ -39,8 +19,10 @@ export default class BaseService {
         try {
             if (_height === 0) {
                 let res = Taro.getSystemInfoSync();
-                const { screenHeight, pixelRatio, statusBarHeight } = res;
+                const { screenHeight, pixelRatio, statusBarHeight, windowHeight } = res;
+                _pixelRadio = pixelRatio;
                 _height = screenHeight * pixelRatio;
+                _windowHeight = windowHeight;
                 _statusBarHeight = statusBarHeight;
                 res = Taro.getMenuButtonBoundingClientRect();
                 if (res) {
@@ -70,31 +52,6 @@ export default class BaseService {
             return true;
         }
         return false;
-    }
-
-    // 格式化表情
-    parseEmoji(txt) {
-        if (!txt) {
-            return '';
-        }
-        return txt
-            .split(/(\[[\u4e00-\u9fff,\uff1f,\w]{1,8}\])/)
-            .filter(str => str.length > 0).map(str => {
-                let obj = {};
-                if (/\[([\u4e00-\u9fff,\uff1f,\w]{1,8})\]/.test(str)) {
-                    if (weibo_emojis[str]) {
-                        obj.type = 1;
-                        obj.src = weibo_emojis[str].url;
-                    } else {
-                        obj.type = 0;
-                        obj.value = str;
-                    }
-                } else {
-                    obj.type = 0;
-                    obj.value = str;
-                }
-                return obj;
-            });
     }
 
     // 格式化评论
@@ -244,7 +201,7 @@ export default class BaseService {
         return topic;
     }
 
-    // 上传单张图片
+    // 选择单张图片并上传
     async uploadOneImg() {
         const obj = await Taro.chooseImage({
             sizeType: 'compressed',
@@ -255,6 +212,18 @@ export default class BaseService {
             return path;
         }
         return null;
+    }
+
+    // 上传多张图片
+    async uploadImgs(files) {
+        const images = files.map((item) => {
+            if (typeof item === 'string') {
+                return item;
+            }
+            return item.file.path;
+        });
+        const imgs = await this.qiniUploadFile(images);
+        return imgs;
     }
 
     setMsgCount(user) {
@@ -297,13 +266,13 @@ export default class BaseService {
 
     // 七牛云文件上传
     /**
-     * @param {Arrary} imgs 图片数组 [{path: ''}, {path: ''}]
+     * @param {Arrary} imgs 图片数组 ['dizhi', 'dizhi']
      * @param {Boolean} isSingle 是否返回单个路径
      */
     async qiniUploadFile(imgs, isSingle = false) {
         let imgPaths = [];
+        let token = await this.getQiniuToken();
         for (const img of imgs) {
-            let token = await this.getQiniuToken();
             if (token === null) {
                 continue;
             }
@@ -325,7 +294,8 @@ export default class BaseService {
                 } else {
                     return null;
                 }
-            }).catch(() => {
+            }).catch((err) => {
+                console.warn(err);
                 return null;
             });
             if (result) {
@@ -384,5 +354,13 @@ export default class BaseService {
 
     getStatusBarHeight() {
         return _statusBarHeight;
+    }
+
+    getPixelRadio() {
+        return _pixelRadio;
+    }
+
+    getWindowHeight () {
+        return _windowHeight;
     }
 }
