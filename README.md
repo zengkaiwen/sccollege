@@ -2,7 +2,7 @@
 
 ## 前言：
 
-SC-College是我的一个毕设项目，基于微信小程序的应用模式。小程序端用到的框架是Taro，主要是考虑到方便部署到其他端，另外也是自己希望在实习结束的时间里保持对React的使用，毕竟Taro是基于React语法规范的。
+SC-College是我的一个毕设项目，基于微信小程序的应用模式。小程序端用到的框架是Taro，主要是考虑到方便部署到其他端，另外也是自己希望在实习结束的时间里保持对React的使用，毕竟Taro是基于React语法规范的。后端服务程序参考[sns-college](https://github.com/kevin-zeus/sns-college)
 
 ## 截图预览
 
