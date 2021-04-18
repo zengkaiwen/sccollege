@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
+import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import { AtAvatar } from 'taro-ui';
 
@@ -10,7 +11,6 @@ class PostCard extends Component {
 
   // 更多，含举报，分享
   more = () => {
-    const { post: { id } } = this.props;
     Taro.showActionSheet({
       itemList: ['分享到好友', '分享到朋友圈']
     }).then(res => {

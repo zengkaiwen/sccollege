@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
 
 import { Post } from '../../common/api';
 import PostCard from '../../components/post-card/post-card';

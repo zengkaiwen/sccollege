@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
 import { View, ScrollView } from '@tarojs/components';
 import { AtActivityIndicator, AtButton } from 'taro-ui'
 
@@ -207,9 +207,9 @@ export default class MyPage extends Component {
                 >
                   {/* 这里是显示刷新的加载 */}
                   {
-                    showLoading ? 
+                    showLoading ?
                       <Loading />
-                    : null 
+                    : null
                   }
                 </View>
                 {children}
@@ -225,7 +225,7 @@ export default class MyPage extends Component {
                 enableTips ? (
                   <View>
                     {
-                      count ? 
+                      count ?
                       <View className='tips' style={{top: `${top}px`}}>为你选出{count}条好内容</View>
                       :
                       <View className='tips' style={{top: `${top}px`}}>暂时没有更好的内容</View>

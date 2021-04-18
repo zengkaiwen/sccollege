@@ -1,0 +1,180 @@
+.info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  line-height: normal;
+  width: 100%;
+  padding: 20rpx 30rpx;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+.info::after {
+  border: none;
+}
+
+.info:hover, .info:active {
+  background-color: #f8f8f8;
+}
+
+.info .avtater image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+}
+
+.info .content {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 20rpx;
+}
+
+.info .content .nick {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.info .content .des {
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+
+.info .content .des .label {
+  color: #b2b2b2;
+  margin-right: 12rpx;
+}
+
+.info .content .des .value {
+  color: #000;
+  margin-right: 30rpx;
+}
+
+.info .right {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30rpx;
+  color: #888888;
+}
+
+.info .right .login-txt {
+  color: #6190e8;
+}
+
+.tool {
+  margin: 30rpx;
+  background: #fff;
+  padding: 30rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20rpx;
+}
+
+.tool .item {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.tool .item .value {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.tool .item .value.rank {
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #e6a23c;
+}
+
+.tool .item .label {
+  font-size: 24rpx;
+  color: #b2b2b2;
+}
+
+swiper {
+  margin: 20rpx 0;
+  background: #ffffff;
+  height: 290rpx;
+}
+
+.cells {
+  margin-top: 40rpx;
+  padding: 20rpx 0;
+  background: #ffffff;
+}
+
+.cells button {
+  text-align: left;
+}
+
+.cells button::after {
+  border: none;
+}
+
+.cells .cell {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff;
+  padding: 20rpx 40rpx;
+}
+
+.cells .cell.cell-hover {
+  background: #f8f8f8;
+}
+
+.cells .cell .left {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.cells .cell .left .title {
+  font-size: 36rpx;
+  line-height: 36rpx;
+}
+
+.cells .cell .left .des {
+  font-size: 24rpx;
+  color: #b2b2b2;
+}
+
+.cells .cell .right {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #b2b2b2;
+}
+
+.cells .cell .right .value {
+  font-size: 28rpx;
+}
+
+.cells .cell .right .auth {
+  font-size: 26rpx;
+  color: red;
+}
+

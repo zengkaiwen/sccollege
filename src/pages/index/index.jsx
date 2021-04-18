@@ -1,13 +1,14 @@
-import Taro, { Component } from '@tarojs/taro'
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro'
 import { View, Swiper, SwiperItem } from '@tarojs/components'
 
-import NavBar from 'taro-navigationbar';
-import { connect } from '@tarojs/redux'
+import { connect } from 'react-redux'
 
 import tabChange from '../../actions/hometabs'
 
 import './index.scss'
 
+import NavBar from '../../components/navigator/navigator';
 import Tabs from '../../components/tab-bar/tab-bar';
 import Topic from '../../components/page-topic/page-topic';
 import Recommend from '../../components/page-recommend/page-recommend';
@@ -24,17 +25,12 @@ import WithAuth from '../../components/with/with-auth';
 class Index extends Component {
 
   state = {
-    labels: ['话题', '推荐'],
+    labels: ['话题', '推荐', '活动'],
     action_right: 15,
   }
 
   componentDidMount() {
     console.log(this.props);
-  }
-
-  config = {
-    navigationBarTitleText: '首页',
-    navigationStyle: 'custom'
   }
 
   onTabChange = (index) => {

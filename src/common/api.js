@@ -9,7 +9,6 @@ import FollowService from './follow-service';
 import NoticeService from './notice-service';
 import Cities from './cities';
 
-export { weibo_emojis } from "./base-service";
 export const Base = new BaseService();
 export const User = new UserService();
 export const Topic = new TopicService();

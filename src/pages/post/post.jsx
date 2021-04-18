@@ -1,6 +1,6 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
 import { View, Text } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 
 import PostCard from '../../components/post-card/post-card';
 import CommentCard from '../../components/comment-card/comment-card';
@@ -70,10 +70,6 @@ class Post extends Component {
         pageState: 1,
       });
     }
-  }
-
-  config = {
-    navigationBarTitleText: '帖子详情',
   }
 
   // 下拉加载

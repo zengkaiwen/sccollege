@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { AtAvatar, AtButton } from 'taro-ui';
 import './user-home.scss';
@@ -33,10 +34,6 @@ class UserHome extends Component {
       title: `【${user_nickname}】的个人主页`,
       path: '/pages/user-home/user-home?id='+id
     }
-  }
-
-  config = {
-    navigationBarTitleText: '用户主页',
   }
 
   init = async () => {

@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
+import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { AtAvatar } from 'taro-ui';
 
@@ -34,7 +35,7 @@ export default class NoticeComment extends Component {
         });
       }
     }
-    
+
     Taro.navigateTo({
       url: '/pages/post/post?id='+data.post_id
     });

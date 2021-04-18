@@ -1,0 +1,49 @@
+.comment-wrap {
+  background-color: white;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80rpx;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20rpx;
+  padding: 10rpx 30rpx;
+}
+
+.comment-wrap .option {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 28rpx;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #7f7f7f;
+}
+
+.comment-wrap .option .divi {
+  margin: 0 10rpx;
+  width: 1rpx;
+  height: 28rpx;
+  background-color: #7f7f7f;
+}
+
+.comment-wrap .option .active {
+  color: #6190e8;
+}
+
+.tip {
+  text-align: center;
+  font-size: 26rpx;
+  color: #989898;
+  margin: 30rpx 0;
+}
+
+.bottom {
+  height: 100rpx;
+}
+

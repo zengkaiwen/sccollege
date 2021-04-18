@@ -1,6 +1,7 @@
+import React, { Component } from 'react'
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 
 function isEmptyObject(obj) {
   for(let key in obj) {
@@ -12,7 +13,7 @@ function isEmptyObject(obj) {
 @connect(({ user }) => ({
   user
 }))
-class WithLogin extends Taro.Component {
+class WithLogin extends Component {
 
   isAuth = () => {
     const { user, onClick } = this.props;

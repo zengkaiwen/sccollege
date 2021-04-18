@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
+import Taro from '@tarojs/taro';
 import {
   View, ScrollView, Image, Text, Button
 } from '@tarojs/components';
@@ -22,7 +23,7 @@ export default class PageTopic extends Component {
     // hasMore: true,
     // isLoadData: false,
     pageIndex: 1,
-    // pageSize: 15 
+    // pageSize: 15
   }
 
   componentDidMount () {

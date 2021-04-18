@@ -1,5 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
-import { View } from '@tarojs/components';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 
 import MyPage from '../../../components/my-page/my-page';
 import NoticeOfficial from '../../../components/notice-official/notice-official';
@@ -8,8 +8,6 @@ import NoticeComment from '../../../components/notice-comment/notice-comment';
 import NoticeReply from '../../../components/notice-reply/notice-reply';
 
 import { Notice } from '../../../common/api';
-
-import './notice-list.scss'
 
 export default class NoticeList extends Component {
 
@@ -24,10 +22,6 @@ export default class NoticeList extends Component {
 
   componentDidMount() {
     this.init();
-  }
-
-  config = {
-    navigationBarTitleText: '',
   }
 
   init = async () => {

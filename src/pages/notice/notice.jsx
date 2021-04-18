@@ -1,10 +1,11 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro'
 import {
   View,
   Image,
   Text
 } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import { AtBadge } from 'taro-ui';
 
 import { Notice as NoticeService } from '../../common/api';
@@ -32,10 +33,6 @@ class Notice extends Component {
       });
       return;
     }
-  }
-
-  config = {
-    navigationBarTitleText: '消息通知'
   }
 
   componentDidShow() {

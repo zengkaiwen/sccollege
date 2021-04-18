@@ -1,14 +1,11 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 
 import TopicList from '../../components/topic-list/topic-list';
 import Footer from '../../components/guide-footer/guide-footer';
 
 export default class TopicMaidan extends Component {
-
-  config = {
-    navigationBarTitleText: '话题广场'
-  }
 
   onTopicItemClick = () => {
 

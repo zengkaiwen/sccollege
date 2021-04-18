@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.page {
+  background: transparent;
+}
+.user-box {
+  position: relative;
+  padding: 100rpx 30PX;
+}
+.user-box .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-filter: blur(10rpx);
+          filter: blur(10rpx);
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: -1;
+}
+.user-box .top {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.user-box .shadow {
+  -webkit-box-shadow: 4rpx 4rpx 6rpx rgba(0, 0, 0, 0.35);
+          box-shadow: 4rpx 4rpx 6rpx rgba(0, 0, 0, 0.35);
+}
+.user-box .center {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30rpx;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+.user-box .center .nickname {
+  font-size: 46rpx;
+}
+.user-box .center .school {
+  font-size: 32rpx;
+  margin-left: 40rpx;
+  position: relative;
+}
+.user-box .center .school::before {
+  content: '·';
+  position: absolute;
+  left: -25rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.user-box .bottom .tip {
+  display: inline-block;
+  margin-right: 30rpx;
+  font-size: 32rpx;
+  color: white;
+}
+.user-box .bottom .tip .txt {
+  font-size: 26rpx;
+  padding-left: 6rpx;
+}
+

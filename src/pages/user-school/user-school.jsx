@@ -1,9 +1,10 @@
 /* eslint-disable no-shadow */
+import React, { Component } from 'react';
 import Taro from '@tarojs/taro';
 import {
   View, PickerView, PickerViewColumn
 } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 
 import { AtIcon, AtFloatLayout } from 'taro-ui';
 
@@ -28,7 +29,7 @@ for (let i = currentYear - 8; i <= currentYear; i++) {
 }), (dispatch) => ({
   dispatch,
 }))
-class UserSchool extends Taro.Component {
+class UserSchool extends Component {
 
   state = {
     showDegreeDialog: false,
@@ -51,10 +52,6 @@ class UserSchool extends Taro.Component {
     this.setState({
       schools,
     })
-  }
-
-  config = {
-    navigationBarTitleText: '编辑学校信息',
   }
 
   handleSchool = (e) => {

@@ -1,4 +1,5 @@
-import Taro, { Component, switchTab } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import { View, Image, Text, Input } from '@tarojs/components';
 import { AtIcon, AtButton } from 'taro-ui';
 
@@ -14,10 +15,6 @@ class TopicCreate extends Component {
     follow_name: '',
     des: '',
     disabled: false,
-  }
-
-  config = {
-    navigationBarTitleText: '创建话题'
   }
 
   changeIcon = async () => {

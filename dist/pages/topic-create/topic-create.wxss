@@ -1,0 +1,51 @@
+page {
+  background-color: white;
+}
+
+.form-item {
+  background-color: white;
+  padding: 30rpx;
+}
+
+.form-item .label {
+  font-size: 32rpx;
+  color: #595959;
+  line-height: 50rpx;
+}
+
+.form-item .des {
+  font-size: 26rpx;
+  color: #989898;
+  line-height: 40rpx;
+}
+
+.form-item .img {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #f2f2f2;
+}
+
+.form-item .img .des {
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+.form-item .form-control {
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+

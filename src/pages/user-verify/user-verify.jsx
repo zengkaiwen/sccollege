@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 
 import { AtInput, AtIcon } from 'taro-ui';
@@ -12,11 +13,6 @@ class UserVerify extends Component {
   state = {
     user_name: '',
     auth_image: '',
-    disabled: false,
-  }
-
-  config = {
-    navigationBarTitleText: '学生认证'
   }
 
   handleInputChange = (e) => {

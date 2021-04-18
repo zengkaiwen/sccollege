@@ -1,0 +1,47 @@
+.topic-box {
+  position: relative;
+  padding: 100rpx 30PX;
+}
+
+.topic-box .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-filter: blur(20rpx);
+          filter: blur(20rpx);
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.topic-box .topic {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #321123;
+}
+
+.topic-box .topic .title {
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+
+.topic-box .topic .des {
+  font-size: 26rpx;
+  font-weight: lighter;
+  color: #989898;
+}
+
+.topic-box .topic .follow {
+  margin: 20rpx 0;
+  font-size: 28rpx;
+}
+

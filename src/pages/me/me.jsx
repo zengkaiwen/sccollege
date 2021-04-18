@@ -1,16 +1,16 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import {
   View, Image, Button, Text
 } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 import { AtIcon } from 'taro-ui';
 
 import { User } from '../../common/api';
 import { getUser } from '../../actions/user';
 import WithLogin from '../../components/with/with-login';
 
-import './me.scss';
-
+import './me.scss'
 
 @connect(({ user }) => ({
   user
@@ -25,11 +25,6 @@ class Me extends Component {
 
   init() {
 
-  }
-
-  config = {
-    navigationBarTitleText: '我的',
-    navigationBarBackgroundColor: '#f8f8f8'
   }
 
   // 跳到个人主页

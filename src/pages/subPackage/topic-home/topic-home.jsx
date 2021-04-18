@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { AtAvatar, AtButton } from 'taro-ui';
 
@@ -32,10 +33,6 @@ export default class TopicHome extends Component {
       title: '# '+title,
       path: '/pages/subPackage/topic-home/topic-home?id='+id
     }
-  }
-
-  config = {
-    navigationBarTitleText: '话题详情',
   }
 
   async init() {
@@ -114,7 +111,7 @@ export default class TopicHome extends Component {
   }
 
   render() {
-    const { 
+    const {
       pageState, showMoreLoading, topic, postList, noMore, isFollow, follow_count
     } = this.state;
     return (

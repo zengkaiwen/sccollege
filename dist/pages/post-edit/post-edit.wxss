@@ -1,0 +1,40 @@
+.form-item {
+  background-color: white;
+  padding: 30rpx;
+}
+
+.form-item.list-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.5;
+}
+
+.form-item.list-item .left {
+  color: #6190e8;
+}
+
+.form-item.list-item .center {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  color: #cccccc;
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+
+.form-item.image-picker {
+  padding: 20rpx 20rpx 20rpx 10rpx;
+}
+
+page {
+  background-color: white;
+}
+

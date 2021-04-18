@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
 import { View } from '@tarojs/components';
 
 import PostEditor from '../../components/post-editor/post-editor';
@@ -6,10 +6,6 @@ import PostEditor from '../../components/post-editor/post-editor';
 import './post-edit.scss';
 
 class PostEdit extends Component {
-
-  config = {
-    navigationBarTitleText: '发帖子',
-  }
 
   render() {
     return (

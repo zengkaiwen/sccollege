@@ -1,6 +1,7 @@
 /* eslint-disable no-shadow */
-import Taro, { Component } from '@tarojs/taro';
-import { connect } from '@tarojs/redux';
+import React, { Component } from 'react'
+import Taro from '@tarojs/taro';
+import { connect } from 'react-redux';
 import { View, Image, Input, Button, PickerView, PickerViewColumn } from '@tarojs/components';
 import {
   AtIcon,
@@ -72,11 +73,6 @@ class UserEdit extends Component {
     this.setState({
       userState: user,
     });
-  }
-
-  config = {
-    navigationBarTitleText: '编辑个人资料',
-    navigationBarBackgroundColor: '#f8f8f8'
   }
 
   onUpload = async () => {
@@ -153,7 +149,7 @@ class UserEdit extends Component {
         ...userState,
         label
       }
-    }); 
+    });
   }
 
   handlePathetIndex = async (index) => {
@@ -226,7 +222,7 @@ class UserEdit extends Component {
       provinces,
       cities,
     } = this.state;
-    const { 
+    const {
       user
     } = this.props;
     return (

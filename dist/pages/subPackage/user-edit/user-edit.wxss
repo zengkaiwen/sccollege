@@ -1,0 +1,152 @@
+.avtater {
+  text-align: center;
+  padding: 30rpx;
+  background: #ffffff;
+  position: relative;
+}
+
+.avtater .image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  border: #ffffff solid 8rpx;
+  -webkit-box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.1);
+          box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.avtater .btn-edit {
+  background: #ffffff;
+  border: #ffffff solid 8rpx;
+  -webkit-box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.1);
+          box-shadow: 4rpx 4rpx 4rpx rgba(0, 0, 0, 0.1);
+  width: 64rpx;
+  height: 64rpx;
+  text-align: center;
+  line-height: 64rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 395rpx;
+  border-radius: 64rpx;
+}
+
+.avtater .btn-edit.icon {
+  font-size: 48rpx;
+}
+
+.cells {
+  background: #ffffff;
+  margin-bottom: 30rpx;
+}
+
+.cells .cell {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40rpx 30rpx;
+  font-size: 36rpx;
+}
+
+.cells .cell .left {
+  -webkit-flex-basis: 240rpx;
+      -ms-flex-preferred-size: 240rpx;
+          flex-basis: 240rpx;
+}
+
+.cells .cell .right {
+  -webkit-align-content: flex-end;
+      -ms-flex-line-pack: end;
+          align-content: flex-end;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #b2b2b2;
+  font-size: 30rpx;
+}
+
+.cells .cell .right .icon {
+  font-size: 34rpx;
+}
+
+.cells .cell.btn-cell {
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #6190e8;
+}
+
+.cells .cell.btn-cell .icon {
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.cells .cell:active {
+  background-color: #f8f8f8;
+}
+
+.input-bg {
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 30rpx;
+}
+
+.input-bg.textarea {
+  width: 100%;
+  font-size: 32rpx;
+  height: 40rpx;
+  text-align: left;
+}
+
+.nick-input {
+  font-size: 34rpx;
+  text-align: left;
+}
+
+.at-float-layout__container {
+  min-height: 200PX;
+  height: 200PX;
+}
+
+.picker-title {
+  height: 50PX;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 30PX;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.picker-title .btn {
+  font-size: 34rpx;
+  line-height: 50PX;
+  font-weight: bold;
+}
+
+.picker-title .btn.confirm {
+  color: #6190e8;
+}
+
+.picker-col {
+  text-align: center;
+  line-height: 50PX;
+}
+

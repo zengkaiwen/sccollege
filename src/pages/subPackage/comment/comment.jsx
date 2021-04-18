@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react';
 import { View } from '@tarojs/components';
 
 import MyPage from '../../../components/my-page/my-page';
@@ -56,10 +56,6 @@ export default class Comment extends Component {
     }
   }
 
-  config = {
-    navigationBarTitleText: '评论详情',
-  }
-
   // 上拉加载
   onScrollToLower = async () => {
     const { id } = this.$router.params;
@@ -93,7 +89,7 @@ export default class Comment extends Component {
   }
 
   render() {
-    const { 
+    const {
       comment, pageState, noMore, showMoreLoading, toUser, replyList
     } = this.state;
     return (
@@ -115,7 +111,7 @@ export default class Comment extends Component {
           <View className='tip'>回复列表</View>
           {
             replyList.map(reply => (
-              <ReplyCard key={reply.id} reply={reply} onContentClick={() => this.replyClick(reply)} commentUserId={comment.user.id} /> 
+              <ReplyCard key={reply.id} reply={reply} onContentClick={() => this.replyClick(reply)} commentUserId={comment.user.id} />
             ))
           }
         </MyPage>

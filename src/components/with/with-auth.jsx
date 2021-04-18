@@ -1,11 +1,12 @@
+import React, { Component } from 'react'
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
+import { connect } from 'react-redux';
 
 @connect(({ user }) => ({
   user
 }))
-class WithAuth extends Taro.Component {
+class WithAuth extends Component {
 
   isAuth = () => {
     const { user, onClick } = this.props;

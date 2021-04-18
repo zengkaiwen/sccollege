@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
 import { View, Button } from '@tarojs/components';
 
 import './guide-footer.scss'

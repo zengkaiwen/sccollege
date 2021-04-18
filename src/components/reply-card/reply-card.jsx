@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components';
 import { AtAvatar } from 'taro-ui';
 
@@ -45,7 +45,7 @@ export default class ReplyCard extends Component {
       });
     }
   }
-  
+
   render() {
     const { reply_data, likes_count, isLike } = this.state;
     const { commentUserId } = this.props;

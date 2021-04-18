@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
+import Taro from '@tarojs/taro';
 import { View, ScrollView, Textarea, Switch, Image } from '@tarojs/components';
 import { AtButton, AtIcon } from 'taro-ui';
 
@@ -30,7 +31,7 @@ export default class CommentReply extends Component {
 
   init() {
     const { msgCount, likesCount, type, parentId } = this.props;
-    
+
     let isLike = false;
     if (type === 'comment') {
       isLike = Like.isLike('post', parentId);
@@ -130,7 +131,7 @@ export default class CommentReply extends Component {
   // 发表
   publish = async () => {
     const { images, content, isSecret } = this.state;
-    const { type, toUser, parentId, commentId, replyId,} = this.props;
+    const { type, toUser, parentId } = this.props;
     this.setState({
       disabled: true,
       loading: true,
@@ -243,7 +244,7 @@ export default class CommentReply extends Component {
                 <View className='sup'>{msg_count}</View>
               </View>
               <WithLogin onClick={this.doLike}>
-                <View 
+                <View
                   className={[
                     'icon',
                     isLike ? 'icon-zan-full' : 'icon-zan-line'

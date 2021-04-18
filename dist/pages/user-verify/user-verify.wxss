@@ -1,0 +1,64 @@
+.box {
+  padding: 20rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+}
+
+.box .title {
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+
+.box .des {
+  font-size: 28rpx;
+  color: #989898;
+}
+
+.box .tip {
+  font-size: 28rpx;
+  color: #717171;
+}
+
+.box .img_box {
+  margin: 30rpx 0;
+  width: 500rpx;
+  height: 300rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f8f8f8;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box .img_box .indicate {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box .img_box .img {
+  width: 100%;
+  height: 100%;
+}
+
+.at-input {
+  margin-left: 0 !important;
+}
+

@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import React, { Component } from 'react'
+import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { AtTextarea, AtFloatLayout, AtButton, AtIcon, AtImagePicker } from 'taro-ui';
 
@@ -52,7 +53,7 @@ class PostEditor extends Component {
     });
   }
 
-  handleImageChange = (files, type, index) => {
+  handleImageChange = (files) => {
     const count = 9 - files.length;
     let showAddImg = true;
     if (count === 0) {
@@ -120,7 +121,7 @@ class PostEditor extends Component {
     if (result) { // 新建成功
       Taro.navigateBack();
     }
-    
+
   }
 
   render() {
@@ -170,7 +171,7 @@ class PostEditor extends Component {
             {submitText}
           </AtButton>
         </View>
-        <AtFloatLayout 
+        <AtFloatLayout
           isOpened={isOpened}
           title='选择一个话题'
           onClose={this.handleClose}
